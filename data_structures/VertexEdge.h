@@ -12,6 +12,8 @@
 #include <limits>
 #include <algorithm>
 #include "../data_structures/MutablePriorityQueue.h"
+#include "C:\ProjetoDA\Railway\Railnetwork\Station.h"
+#include "C:\ProjetoDA\Railway\Railnetwork\Network.h"
 
 class Edge;
 

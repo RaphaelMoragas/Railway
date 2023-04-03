@@ -1,6 +1,6 @@
 #include "Graph.h"
 
-int Graph::getNumVertex() const {
+const Graph Graph::getNumVertex() const {
     return vertexSet.size();
 }
 

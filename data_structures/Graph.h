@@ -38,7 +38,7 @@ public:
     bool addEdge(const int &sourc, const int &dest, double w);
     bool addBidirectionalEdge(const int &sourc, const int &dest, double w);
 
-    int getNumVertex() const;
+    const Graph getNumVertex() const;
     std::vector<Vertex *> getVertexSet() const;
 protected:
     std::vector<Vertex *> vertexSet;    // vertex set

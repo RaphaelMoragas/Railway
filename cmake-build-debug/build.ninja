@@ -67,8 +67,8 @@ build CMakeFiles/Railnetwork.dir/Menu.cpp.obj: CXX_COMPILER__Railnetwork_Debug C
   OBJECT_DIR = CMakeFiles\Railnetwork.dir
   OBJECT_FILE_DIR = CMakeFiles\Railnetwork.dir
 
-build CMakeFiles/Railnetwork.dir/Grafo.cpp.obj: CXX_COMPILER__Railnetwork_Debug C$:/ProjetoDA/Railway/Railnetwork/Grafo.cpp || cmake_object_order_depends_target_Railnetwork
-  DEP_FILE = CMakeFiles\Railnetwork.dir\Grafo.cpp.obj.d
+build CMakeFiles/Railnetwork.dir/Algorithm.cpp.obj: CXX_COMPILER__Railnetwork_Debug C$:/ProjetoDA/Railway/Railnetwork/Algorithm.cpp || cmake_object_order_depends_target_Railnetwork
+  DEP_FILE = CMakeFiles\Railnetwork.dir\Algorithm.cpp.obj.d
   FLAGS = -g -std=gnu++14
   OBJECT_DIR = CMakeFiles\Railnetwork.dir
   OBJECT_FILE_DIR = CMakeFiles\Railnetwork.dir
@@ -105,7 +105,7 @@ build CMakeFiles/Railnetwork.dir/data_structures/VertexEdge.cpp.obj: CXX_COMPILE
 #############################################
 # Link the executable Railnetwork.exe
 
-build Railnetwork.exe: CXX_EXECUTABLE_LINKER__Railnetwork_Debug CMakeFiles/Railnetwork.dir/main.cpp.obj CMakeFiles/Railnetwork.dir/Data.cpp.obj CMakeFiles/Railnetwork.dir/Menu.cpp.obj CMakeFiles/Railnetwork.dir/Grafo.cpp.obj CMakeFiles/Railnetwork.dir/Network.cpp.obj CMakeFiles/Railnetwork.dir/Station.cpp.obj CMakeFiles/Railnetwork.dir/data_structures/Graph.cpp.obj CMakeFiles/Railnetwork.dir/data_structures/VertexEdge.cpp.obj
+build Railnetwork.exe: CXX_EXECUTABLE_LINKER__Railnetwork_Debug CMakeFiles/Railnetwork.dir/main.cpp.obj CMakeFiles/Railnetwork.dir/Data.cpp.obj CMakeFiles/Railnetwork.dir/Menu.cpp.obj CMakeFiles/Railnetwork.dir/Algorithm.cpp.obj CMakeFiles/Railnetwork.dir/Network.cpp.obj CMakeFiles/Railnetwork.dir/Station.cpp.obj CMakeFiles/Railnetwork.dir/data_structures/Graph.cpp.obj CMakeFiles/Railnetwork.dir/data_structures/VertexEdge.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Railnetwork.dir
