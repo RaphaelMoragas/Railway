@@ -99,6 +99,6 @@ void Algorithm::mostTrainsRequired() {
         }
     }
 
-    std::cout << "The most trains required between stations are: " << maxTrains << std::endl;
-    std::cout << "These stations are: " << stationA << " and " << stationB << std::endl;
+    std::cout << maxTrains << std::endl;
+    std::cout  << stationA << " " << stationB << std::endl;
 }
