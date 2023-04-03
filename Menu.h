@@ -20,6 +20,10 @@ private:
     void principal();
     void submenu1();
     void submenu2();
+    void submenu3();
+    void submenu4();
+
+
 };
 
 #endif //RAILNETWORK_MENU_H

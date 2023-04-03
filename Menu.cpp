@@ -12,6 +12,8 @@ void Menu::menu() {
     std::cout << "Selecione uma das seguintes opções (0-6):" << std::endl;
     std::cout << "1- Número máximo de trens que podem viajar simultaneamente entre duas estações específicas" << std::endl;
     std::cout << "2- Pares de estação com a maior quantidade de trens" << std::endl;
+    std::cout << "3- Top k municípios e distritos em relação às necessidades de transporte" << std::endl;
+    std::cout << "4- Número máximo de trens que podem chegar simultaneamente a uma estação" << std::endl;
     std::cout << "0- Sair" << "\n";
 }
 
@@ -30,6 +32,12 @@ void Menu::principal() {
                 break;
             case 2:
                 submenu2();
+                break;
+            case 3:
+                submenu3();
+                break;
+            case 4:
+                submenu4();
                 break;
 
             default:
@@ -77,4 +85,30 @@ void Menu::submenu2() {
         std::cout << pair.first->getName() << ' ' << pair.second->getName() << std::endl;
     }
 
+}
+
+
+void Menu::submenu3() {
+    int k;
+    std::cout << "Informe o valor de k:" << std::endl;
+    std::cin >> k;
+    std::cin.ignore();
+
+    std::list<std::pair<std::string, std::string>> topK = metrics.topKMunicipalitiesAndDistricts(k);
+
+    std::cout << "Top " << k << " municípios e distritos em relação às necessidades de transporte:" << std::endl;
+    for (const auto &pair : topK) {
+        std::cout << pair.first << " - " << pair.second << std::endl;
+    }
+}
+
+void Menu::submenu4() {
+    std::string station;
+    std::cout << "Informe o nome da estação:" << std::endl;
+    std::cin.ignore();
+    getline(std::cin, station);
+
+    int maxTrains = metrics.maxTrainsArrivingAtStation(station);
+
+    std::cout << "O número máximo de trens que podem chegar simultaneamente à estação " << station << " é " << maxTrains << std::endl;
 }

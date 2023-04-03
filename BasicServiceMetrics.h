@@ -10,8 +10,6 @@ class BasicServiceMetrics {
 private:
     Graph *railwayGraph;
 
-    int findMaxFlow(Vertex *source, Vertex *target);
-
 public:
     explicit BasicServiceMetrics(Graph *railwayGraph);
 
@@ -19,5 +17,7 @@ public:
     std::list<std::pair<Vertex*, Vertex*>> pairsMaxFlow();
     std::list<std::pair<std::string, std::string>> topKMunicipalitiesAndDistricts(int k);
     int maxTrainsArrivingAtStation(const std::string &station);
+
+    int findMaxFlow(Vertex *source, Vertex *target);
 };
 #endif //RAILNETWORK_BASICSERVICEMETRICS_H
