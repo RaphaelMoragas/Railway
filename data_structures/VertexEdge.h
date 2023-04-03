@@ -1,19 +1,15 @@
-//
-// Created by rapha on 02/04/2023.
-//
-
 #ifndef RAILNETWORK_VERTEXEDGE_H
 #define RAILNETWORK_VERTEXEDGE_H
 
+#pragma once
 #include <iostream>
+#include <list>
 #include <vector>
 #include <string>
 #include <queue>
 #include <limits>
 #include <algorithm>
 #include "../data_structures/MutablePriorityQueue.h"
-#include "C:\ProjetoDA\Railway\Railnetwork\Station.h"
-#include "C:\ProjetoDA\Railway\Railnetwork\Network.h"
 
 class Edge;
 
@@ -22,6 +18,9 @@ class Edge;
 /************************* Vertex  **************************/
 
 class Vertex {
+
+    std::list<Edge *> edges;
+
 public:
     Vertex(int id);
     Vertex(int id, std::string name, std::string district, std::string municipality, std::string township, std::string line);
@@ -49,6 +48,8 @@ public:
     void removeOutgoingEdges();
 
     friend class MutablePriorityQueue<Vertex>;
+
+    const std::list<Edge *> &getEdges() const;
 protected:
     int id;                // identifier
     std::string name;       // station name
@@ -75,12 +76,16 @@ protected:
 /********************** Edge  ****************************/
 
 class Edge {
+
+    int capacity;
+
 public:
     Edge(Vertex *orig, Vertex *dest, double w);
     Edge(Vertex *orig, Vertex *dest, std::string service, double w);
 
     Vertex * getDest() const;
     double getWeight() const;
+    std::string getService() const;
     bool isSelected() const;
     Vertex * getOrig() const;
     Edge * getReverse() const;
@@ -89,6 +94,9 @@ public:
     void setSelected(bool selected);
     void setReverse(Edge *reverse);
     void setFlow(double flow);
+
+    int getCapacity() const;
+
 protected:
     Vertex * dest; // destination vertex
     std::string service;
@@ -103,5 +111,6 @@ protected:
 
     double flow; // for flow-related problems
 };
+
 
 #endif //RAILNETWORK_VERTEXEDGE_H

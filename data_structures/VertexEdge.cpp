@@ -138,6 +138,10 @@ void Vertex::deleteEdge(Edge *edge) {
     delete edge;
 }
 
+const std::list<Edge *> &Vertex::getEdges() const {
+    return edges;
+}
+
 /********************** Edge  ****************************/
 
 Edge::Edge(Vertex *orig, Vertex *dest, double w): orig(orig), dest(dest), weight(w) {}
@@ -154,6 +158,10 @@ double Edge::getWeight() const {
 
 Vertex * Edge::getOrig() const {
     return this->orig;
+}
+
+std::string Edge::getService() const {
+    return this->service;
 }
 
 Edge *Edge::getReverse() const {
@@ -178,4 +186,8 @@ void Edge::setReverse(Edge *reverse) {
 
 void Edge::setFlow(double flow) {
     this->flow = flow;
+}
+
+int Edge::getCapacity() const {
+    return capacity;
 }

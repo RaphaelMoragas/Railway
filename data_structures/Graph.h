@@ -1,13 +1,9 @@
-//
-// Created by rapha on 02/04/2023.
-//
-
 #ifndef RAILNETWORK_GRAPH_H
 #define RAILNETWORK_GRAPH_H
-
 #include <iostream>
 #include <string>
 #include <vector>
+#include <unordered_map>
 #include <queue>
 #include <limits>
 #include <algorithm>
@@ -36,15 +32,27 @@ public:
      * Returns true if successful, and false if the source or destination vertex does not exist.
      */
     bool addEdge(const int &sourc, const int &dest, double w);
-    bool addBidirectionalEdge(const int &sourc, const int &dest, double w);
+    bool addBidirectionalEdge(Vertex *v1, Vertex *v2, std::string service, double w);
 
-    const Graph getNumVertex() const;
+    int edmondsKarp(Vertex *s, Vertex *t);
+
+    int getNumVertex() const;
     std::vector<Vertex *> getVertexSet() const;
+
+    Vertex* getVertex(const std::string &name);
+
 protected:
     std::vector<Vertex *> vertexSet;    // vertex set
 
+    std::unordered_map<std::string, Vertex*> vertices;
+
     double ** distMatrix = nullptr;   // dist matrix for Floyd-Warshall
     int **pathMatrix = nullptr;   // path matrix for Floyd-Warshall
+
+    void testAndVisit(std::queue< Vertex*> &q, Edge *e, Vertex *w, double residual);
+    bool findAugmentingPath(Vertex *s, Vertex *t);
+    double findMinResidualAlongPath(Vertex *s, Vertex *t);
+    void augmentFlowAlongPath(Vertex *s, Vertex *t, double f);
 
     /*
      * Finds the index of the vertex with a given content.
@@ -54,5 +62,6 @@ protected:
 
 void deleteMatrix(int **m, int n);
 void deleteMatrix(double **m, int n);
+
 
 #endif //RAILNETWORK_GRAPH_H

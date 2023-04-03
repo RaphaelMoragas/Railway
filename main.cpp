@@ -1,10 +1,12 @@
+#include <iostream>
+
 #include "Data.h"
 #include "Menu.h"
 
 int main()
 {
     Data data("stations.csv","network.csv");
-    Menu menu = Menu(data.getRailwayGraph());
-    menu.start();
+    Menu menu(data.getRailwayGraph());
     return 0;
 }
+
