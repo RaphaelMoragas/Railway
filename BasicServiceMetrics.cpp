@@ -48,9 +48,9 @@ std::list<std::pair<Vertex*, Vertex*>> BasicServiceMetrics::pairsMaxFlow() {
 std::list<std::pair<std::string, std::string>> BasicServiceMetrics::topKMunicipalitiesAndDistricts(int k) {
     std::map<std::pair<std::string, std::string>, int> edgeUsage;
 
-    for (const auto &vertexPair : railwayGraph->getVertex()) {
-        for (const auto &edge : vertexPair.second->getEdges()) {
-            std::string source = vertexPair.first;
+    for (const auto &vertexPair : railwayGraph->getVertexSet()) {
+        for (const auto &edge : vertexPair->getEdges()) {
+            std::string source = vertexPair->getName();
             std::string dest = edge->getDest()->getName();
             int capacity = edge->getCapacity();
             edgeUsage[std::make_pair(source, dest)] += capacity;
